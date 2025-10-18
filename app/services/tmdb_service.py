@@ -11,5 +11,5 @@ async def get_tmdb_data(endpoint: str, params: dict = None):
 
     async with httpx.AsyncClient() as client:
         response = await client.get(f"{TMDB_BASE_URL}{endpoint}", params=params)
-        response.raise_for_status()  # dispara erro se a resposta for inválida
+        response.raise_for_status()  
         return response.json()

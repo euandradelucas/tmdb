@@ -1,9 +1,8 @@
 from fastapi import APIRouter
-from app.models.person import Person, PersonResponse, MovieCreditsResponse
+from app.models.person import Person, PersonResponse, MovieCredit, MovieCreditsResponse
 from app.services.tmdb_service import get_tmdb_data
 
 # Criação do router específico para o "Person"
-
 router = APIRouter()
 
 # 1 - Encontra pessoa por ID
