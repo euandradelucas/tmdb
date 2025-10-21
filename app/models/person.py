@@ -29,9 +29,9 @@ class MovieCredit(BaseModel):
     title: Optional[str] = None
     original_title: Optional[str] = None
     release_date: Optional[str] = None
-    character: Optional[str] = None   # só aparece em cast
-    job: Optional[str] = None         # só aparece em crew
-    department: Optional[str] = None  # só aparece em crew
+    character: Optional[str] = None  
+    job: Optional[str] = None         
+    department: Optional[str] = None 
     credit_id: Optional[str] = None
     order: Optional[int] = None
     popularity: Optional[float] = None

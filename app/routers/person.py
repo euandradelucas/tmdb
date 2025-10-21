@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.models.person import Person, PersonResponse, MovieCredit, MovieCreditsResponse
+from app.models.person import Person, PersonResponse, MovieCreditsResponse
 from app.services.tmdb_service import get_tmdb_data
 
 # Criação do router específico para o "Person"
@@ -16,9 +16,9 @@ async def search_person(query: str):
     return await get_tmdb_data("/search/person", {"query": query})
 
 # 3 - Pessoas populares
-@router.get("/popular", response_model=PersonResponse)
-async def popular_persons():
-    return await get_tmdb_data("/person/popular")
+@router.get("/trending", response_model=PersonResponse)
+async def trending_persons(time_window: str = "week"):
+    return await get_tmdb_data("/trending/person/{time_window}")
 
 # 4 - Todos os filmes de uma pessoa (artista)
 @router.get("/{person_id}/movies", response_model=MovieCreditsResponse)
